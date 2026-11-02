@@ -49,3 +49,21 @@ The application uses a simple data model with meaningful identifiers:
    - Grade level
 
 All data is stored in memory, which means data will be reset when the server restarts.
+
+## Testing
+
+From the project root, install the dependencies and run the backend tests:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe -m pytest
+```
+
+To run only the endpoint tests:
+
+```powershell
+.\.venv\Scripts\python.exe -m pytest tests/test_app.py -q
+```
+
+The tests in `tests/` use pytest and FastAPI's `TestClient`. Each test gets
+isolated in-memory activity data; no running server or browser is required.
